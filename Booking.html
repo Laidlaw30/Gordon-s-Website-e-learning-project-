@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Learning</title>
+  <link rel="stylesheet" href="Style.css"/>
+
+
+
+
+</head>
+<body>
+    <!-- Navigation bar -->
+    <ul class="navbar">
+         <li class="logo"><a href="website.html"><img src="Logo.jpg" alt="Logo" /></a></li>
+        <li><a href="website.html">Home</a></li>
+        <li><a href="Testimonials.html">Testimonials</a></li>
+        <li><a href="Aboutpage.html">About Us</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="Booking.html">Bookings</a></li>
+    </ul>
+
+<section class="learning">
+  <h2 id="change">Learning to use Buttons in HTML</h2>
+  <p>Below is a simple button example:</p>
+
+  <h1 id="demo">This is the original heading</h1>
+  <button onclick="toggleText()">Click me to change the content</button>
+
+  <script>
+    function toggleText() {
+      let heading = document.getElementById("demo");
+      if (heading.innerHTML === "This is the original heading") {
+        heading.innerHTML = "This is a practice button to learn JS";
+      } else {
+        heading.innerHTML = "This is the original heading";
+      }
+    }
+  </script>
+</section>
+<section class="learning">
+  <h2>Learning to use Canvas in HTML</h2>
+
+   <canvas id="myCanvas" width="500" height="300" style="border:1px solid black;"></canvas>
+
+  <script>
+    // Get the canvas and context
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+
+    // Ball properties
+    let x = canvas.width / 2;   // starting x
+    let y = canvas.height / 2;  // starting y
+    let dx = 2;   // speed in x direction
+    let dy = 2;   // speed in y direction
+    let ballRadius = 20;
+
+    // Draw the ball
+    function drawBall() {
+      ctx.beginPath();
+      ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+      ctx.fillStyle = "red";
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    // Update the frame
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // clear the canvas
+      drawBall();
+
+      // Bounce off the walls
+      if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+        dx = -dx;
+      }
+      if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
+        dy = -dy;
+      }
+
+      // Move the ball
+      x += dx;
+      y += dy;
+
+      requestAnimationFrame(draw); // call draw again for the next frame
+    }
+
+    // Start the animation
+    draw();
+  </script>
+</section>
+<section>
+  <h2>Learning to use Tables in HTML</h2>
+  <p>Below is a simple table example:</p>
+    
+<table class = "Table">
+ 
+  <tr>
+    <td>Name</td>
+    <td>Country</td>
+    <td>Profession</td>
+    <td>Contact no.</td>
+    <td>Email</td> <!-- TD stands for Table data cell -->
+  </tr>
+  <tr>
+    <td>Gordon</td>
+    <td>Scotland</td>
+    <td>Handyman</td>
+    <td>07712345678</td>
+    <td>ghandyman@gmail.com</td>
+  </tr>
+  <tr>
+    <td>Lorem</td>
+    <td>Ipsum</td>
+    <td>Blah blah blah</td>
+    <td>blank</td>
+    <td>Not applicable</td>
+  </tr>
+</table>
+
+</section>
+
+<footer>
+    <div class="footer-content">
+      <p>© 2023 Your Company Name. All rights reserved.</p>
+      <ul class = "footer-links">
+           <li><a href="website.html">Home</a></li>
+           <li><a href="Testimonials.html">Testimonials</a></li>
+           <li><a href="Aboutpage.html">About Us</a></li>
+           <li><a href="Contact.html">Contact</a></li>
+           <li><a href="Booking.html">Bookings</a></li>
+       </ul>
+  <p class="footer-social">
+  Follow us on: 
+  <a href="https://www.facebook.com" target="_blank">
+    <img src="Facebook Logo.png" alt="Facebook-logo" class="social-icon">
+  </a>
+  <a href="https://www.twitter.com" target="_blank">
+    <img src="X-logo.png" alt="X-logo" class="social-icon">
+  </a>
+  <a href="https://www.instagram.com" target="_blank">
+    <img src="Instagram-logo.jpg" alt="Instagram-logo" class="social-icon">
+  </a>
+</p>
+</body>
+</html>
